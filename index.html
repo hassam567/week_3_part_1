@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TO DO List</title>
+        <link rel="stylesheet" href="css/style.css">
+
+       
+    </head>
+
+    <body>
+        
+      
+
+           
+     
+
+        <div class="container">
+
+           
+            
+            <div class="todo-app">
+
+              
+             
+                <h1>To-Do List <img src="to-do-list-icon.png"  alt="To_Do_icon"></h1>
+
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add Your Text">
+                    <button onclick="addTask()">Add</button>
+                </div>
+
+                <ul id="list-container">
+
+                   
+                  
+
+                </ul>
+            
+
+              
+
+                 
+           
+
+                    
+
+             
+
+            </div>
+            
+        </div>
+
+
+
+        <script>
+
+            const inputBox = document.getElementById("input-box")
+            const listContainer = document.getElementById("list-container")
+
+            function addTask()
+            {
+                if(inputBox.value==="")
+                {
+                    alert("You must write anything");
+                }
+
+                else
+                {
+                    var li=document.createElement("li");
+                    li.innerHTML=inputBox.value;
+                    listContainer.appendChild(li);
+                    let span=document.createElement("span")
+                    span.innerHTML="\u00d7";
+                    li.appendChild(span);
+                }
+                inputBox.value=""
+            }
+
+            listContainer.addEventListener("click",function(e)
+            {
+                if(e.target.tagName==="SPAN")
+                {
+                 e.target.parentElement.remove();
+                }
+            });
+
+
+        </script>
+
+    </body>
+
+</html>
+
+<!-- <div>
+        <label for="en">Enter your Name</label>
+        <input type="text" name="name" id="en">
+    </div>
+
+    <div>
+        <label for="age">Enter your Age</label>
+        <input type="text" name="age" id="age">
+    </div>
+
+    <div>
+        <button id="btn" onclick="getInputValue()">Get your Data</button>
+    </div>
+
+    <div>
+        <ul id="set">
+            <li id="set"></li>
+        </ul>
+    </div>
+
+    <script>
+        function getInputValue()
+        {
+          
+            var array=new Array();
+            array.forEach(element => {
+                
+            });
+            
+            var a=document.getElementById("en").value;
+            var b=document.getElementById("age").value;
+
+            document.getElementById("set").textContent="Values are: "+a+"  and  "+b
+        
+            
+          
+         
+           
+        }
+     
+    </script> -->
